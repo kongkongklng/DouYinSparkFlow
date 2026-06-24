@@ -50,6 +50,7 @@ const app = createApp({
       FRIEND_LIST_WAIT_TIME: 2000,
       TASK_RETRY_TIMES: 3,
       LOG_LEVEL: "Info",
+      BARK_URL: "",
       ACCOUNTS: [
         {
           username: "user1",
@@ -79,10 +80,12 @@ const app = createApp({
     });
 
     const environmentSecrets = computed(() => {
-      return form.ACCOUNTS.reduce((acc, account, index) => {
+      const secrets = form.ACCOUNTS.reduce((acc, account, index) => {
         acc[`COOKIES_${String(account.unique_id || "").toUpperCase()}`] = account.cookies;
         return acc;
       }, {});
+      secrets.BARK_URL = form.BARK_URL;
+      return secrets;
     });
 
     const copyValue = (value) => {

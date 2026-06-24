@@ -192,6 +192,9 @@
                                 <el-form-item label="输出日志级别">
                                     <el-select v-model="form.LOG_LEVEL" :options="log_level_options" />
                                 </el-form-item>
+                                <el-form-item label="Bark推送地址">
+                                    <el-input v-model="form.BARK_URL" placeholder="https://你的Bark服务/推送Key" />
+                                </el-form-item>
                             </el-form>
                         </div>
                         <div class="account-config-form">
