@@ -2,7 +2,7 @@ name: 抖音自动续火花
 on:
   workflow_dispatch: # 允许手动触发
   schedule: # 定时任务
-    - cron: "45 4 * * *" # 每天 4:30 UTC（对应北京时间 12:30）
+    - cron: "1 16 * * *" # 每天 4:30 UTC（对应北京时间 12:30）
 jobs:
   run-main:
     timeout-minutes: 20
